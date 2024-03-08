@@ -5,7 +5,8 @@ let product1 = {
     image: "images/best_sellers/cover-1-271x281.jpg",
     tag1: "Accessories",
     tag2: "Lips",
-    tag3: "Make Up"
+    tag3: "Make Up",
+    productId:'dfefrewscw'
 }
 
 let product2 = {
@@ -15,7 +16,8 @@ let product2 = {
     image: "/images/best_sellers/Cover-15-271x281.jpg",
     tag1: "Accessories",
     tag2: "Lips",
-    tag3: "Others"
+    tag3: "Others",
+    productId:'hdhdhdhrsf'
 }
 
 let product3 = {
@@ -25,7 +27,8 @@ let product3 = {
     image: "images/best_sellers/Cover-16-271x281.jpg",
     tag1: "Accessories",
     tag2: "Lips",
-    tag3: "Others"
+    tag3: "Others",
+    productId:'hyyffhdhrsf'
 }
 
 let product4 = {
@@ -35,7 +38,8 @@ let product4 = {
     image: "images/best_sellers/Cover-17-271x281.jpg",
     tag1: "Accessories",
     tag2: "Lips",
-    tag3: "Others"
+    tag3: "Others",
+    productId:'ffrestt'
 }
 
 let product5 = {
@@ -45,7 +49,8 @@ let product5 = {
     image: "images/best_sellers/Cover-19-271x281.jpg",
     tag1: "Accessories",
     tag2: "Lips",
-    tag3: "Others"
+    tag3: "Others",
+    productId:'dfrssefd'
 }
 
 
@@ -56,7 +61,8 @@ let product6 = {
     image: "images/best_sellers/Cover-22-271x281.jpg",
     tag1: "Accessories",
     tag2: "Lips",
-    tag3: "Ingredient"
+    tag3: "Ingredient",
+    productId:'dfredrtd'
 }
 
 
@@ -67,7 +73,8 @@ let product7 = {
     image: "images/best_sellers/Cover-18-271x281.jpg",
     tag1: "Accessories",
     tag2: "Lips",
-    tag3: "Organic"
+    tag3: "Organic",
+    productId:'gfsxerr'
 }
 
 
@@ -78,9 +85,9 @@ let product8 = {
     image: "images/best_sellers/cover-4-271x281.jpg",
     tag1: "Accessories",
     tag2: "Lips",
-    tag3: "Organic"
+    tag3: "Organic",
+    productId:'hfijdhge'
 }
-
 
 document.getElementById("name1").innerText = product1.name;
 document.getElementById("price1").innerText = "KES " + product1.price;
@@ -140,6 +147,37 @@ document.getElementById("tag22").innerText = product8.tag1;
 document.getElementById("tag23").innerText = product8.tag2;
 document.getElementById("tag24").innerText = product8.tag3;
 
+document.getElementById("card1").onclick = function () {
+    window.location.href = `productdetails.html?${product1.productId}`;
+}
+
+document.getElementById("card2").onclick = function () {
+    window.location.href = `productdetails.html?${product2.productId}`;
+}
+
+document.getElementById("card3").onclick = function () {
+    window.location.href = `productdetails.html?${product3.productId}`;
+}
+
+document.getElementById("card4").onclick = function () {
+    window.location.href = `productdetails.html?${product4.productId}`;
+}
+
+document.getElementById("card5").onclick = function () {
+    window.location.href = `productdetails.html?${product5.productId}`;
+}
+
+document.getElementById("card6").onclick = function () {
+    window.location.href = `productdetails.html?${product6.productId}`;
+}
+
+document.getElementById("card7").onclick = function () {
+    window.location.href = `productdetails.html?${product7.productId}`;
+}
+
+document.getElementById("card8").onclick = function () {
+    window.location.href = `productdetails.html?${product8.productId}`;
+}
 
 
 
