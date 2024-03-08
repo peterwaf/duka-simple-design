@@ -6,7 +6,7 @@ let product1 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Make Up",
-    productId:'dfefrewscw'
+    productId: 'dfefrewscw'
 }
 
 let product2 = {
@@ -17,7 +17,7 @@ let product2 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Others",
-    productId:'hdhdhdhrsf'
+    productId: 'hdhdhdhrsf'
 }
 
 let product3 = {
@@ -28,7 +28,7 @@ let product3 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Others",
-    productId:'hyyffhdhrsf'
+    productId: 'hyyffhdhrsf'
 }
 
 let product4 = {
@@ -39,7 +39,7 @@ let product4 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Others",
-    productId:'ffrestt'
+    productId: 'ffrestt'
 }
 
 let product5 = {
@@ -50,7 +50,7 @@ let product5 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Others",
-    productId:'dfrssefd'
+    productId: 'dfrssefd'
 }
 
 
@@ -62,7 +62,7 @@ let product6 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Ingredient",
-    productId:'dfredrtd'
+    productId: 'dfredrtd'
 }
 
 
@@ -74,7 +74,7 @@ let product7 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Organic",
-    productId:'gfsxerr'
+    productId: 'gfsxerr'
 }
 
 
@@ -86,7 +86,7 @@ let product8 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Organic",
-    productId:'hfijdhge'
+    productId: 'hfijdhge'
 }
 
 document.getElementById("name1").innerText = product1.name;
@@ -146,6 +146,7 @@ document.getElementById("image8").src = product8.image;
 document.getElementById("tag22").innerText = product8.tag1;
 document.getElementById("tag23").innerText = product8.tag2;
 document.getElementById("tag24").innerText = product8.tag3;
+
 
 document.getElementById("card1").onclick = function () {
     window.location.href = `productdetails.html?${product1.productId}`;

@@ -6,7 +6,7 @@ let product1 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Make Up",
-    productId:'dfefrewscw'
+    productId: 'dfefrewscw'
 }
 
 let product2 = {
@@ -17,7 +17,7 @@ let product2 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Others",
-    productId:'hdhdhdhrsf'
+    productId: 'hdhdhdhrsf'
 }
 
 let product3 = {
@@ -28,7 +28,7 @@ let product3 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Others",
-    productId:'hyyffhdhrsf'
+    productId: 'hyyffhdhrsf'
 }
 
 let product4 = {
@@ -39,7 +39,7 @@ let product4 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Others",
-    productId:'ffrestt'
+    productId: 'ffrestt'
 }
 
 let product5 = {
@@ -50,7 +50,7 @@ let product5 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Others",
-    productId:'dfrssefd'
+    productId: 'dfrssefd'
 }
 
 
@@ -62,7 +62,7 @@ let product6 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Ingredient",
-    productId:'dfredrtd'
+    productId: 'dfredrtd'
 }
 
 
@@ -74,7 +74,7 @@ let product7 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Organic",
-    productId:'gfsxerr'
+    productId: 'gfsxerr'
 }
 
 
@@ -86,7 +86,7 @@ let product8 = {
     tag1: "Accessories",
     tag2: "Lips",
     tag3: "Organic",
-    productId:'hfijdhge'
+    productId: 'hfijdhge'
 }
 
 let heading = document.getElementById("heading");
@@ -96,11 +96,53 @@ let image = document.getElementById("product_image1");
 
 let receivedID = window.location.search;//get the searched after ? in the url
 let productID = decodeURIComponent(receivedID).substring(1); // decode the url and split it to remover the ?
-if(productID == product1.productId){
+if (productID == product1.productId) {
     heading.innerText = product1.name;
     pricing.innerText = `KES : ${product1.price}`
     details.innerHTML = product1.details;
     image.src = product1.image;
+}
 
+else if (productID == product2.productId) {
+    heading.innerText = product2.name;
+    pricing.innerText = `KES : ${product2.price}`
+    details.innerHTML = product2.details;
+    image.src = product2.image;
+}
 
+else if (productID == product3.productId) {
+    heading.innerText = product3.name;
+    pricing.innerText = `KES : ${product3.price}`
+    details.innerHTML = product3.details;
+    image.src = product3.image;
+}
+else if (productID == product4.productId) {
+    heading.innerText = product4.name;
+    pricing.innerText = `KES : ${product4.price}`
+    details.innerHTML = product4.details;
+    image.src = product4.image;
+}
+else if (productID == product5.productId) {
+    heading.innerText = product5.name;
+    pricing.innerText = `KES : ${product5.price}`
+    details.innerHTML = product5.details;
+    image.src = product5.image;
+}
+else if (productID == product6.productId) {
+    heading.innerText = product6.name;
+    pricing.innerText = `KES : ${product6.price}`
+    details.innerHTML = product6.details;
+    image.src = product6.image;
+}
+else if (productID == product7.productId) {
+    heading.innerText = product7.name;
+    pricing.innerText = `KES : ${product7.price}`
+    details.innerHTML = product7.details;
+    image.src = product7.image;
+}
+else if (productID == product8.productId) {
+    heading.innerText = product8.name;
+    pricing.innerText = `KES : ${product8.price}`
+    details.innerHTML = product8.details;
+    image.src = product8.image;
 }
