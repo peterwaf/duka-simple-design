@@ -203,6 +203,7 @@ function qtyAmount(price) {
     document.getElementById("product_count_tracker").onkeyup = function () {
         if (parseInt(document.getElementById("product_count_tracker").value) < 1) {
             alert("Must be greater than 1");
+            document.getElementById("product_count_tracker").value = 1;
         }
         let qty = document.getElementById("product_count_tracker").value;
         qtyInt = parseInt(qty);
