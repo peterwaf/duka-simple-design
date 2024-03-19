@@ -201,6 +201,9 @@ deliveryLocations.onchange = function () {
 
 function qtyAmount(price) {
     document.getElementById("product_count_tracker").onkeyup = function () {
+        if (parseInt(document.getElementById("product_count_tracker").value) < 1) {
+            alert("Must be greater than 1");
+        }
         let qty = document.getElementById("product_count_tracker").value;
         qtyInt = parseInt(qty);
         let finalAmount = qtyInt * price;
@@ -225,6 +228,10 @@ function removeQty() {
     let availableQtyNum = parseInt(availableQty);
     let incrementQyantity = availableQtyNum -= 1;
     document.getElementById("product_count_tracker").value = incrementQyantity;
+    if (parseInt(document.getElementById("product_count_tracker").value) < 1) {
+        alert("Must be greater than 1");
+        document.getElementById("product_count_tracker").value = 1;
+    }
 }
 
 buttonAddQty.addEventListener("click", function () {
@@ -261,12 +268,11 @@ function incrementQtyAmount(product, id) {
     let productID = decordedProductID.substring(1);
     if (productID == id) {
         qtyProductAmount = product.price * availableQtyNum;
+        pricing.innerHTML = `KES : <span id="fullAmount"> ${qtyProductAmount}</span>`;
     }
-    if (qtyProductAmount < 1) {
-        alert("Must be greater than 1");
-    }
-    pricing.innerHTML = `KES : <span id="fullAmount"> ${qtyProductAmount}</span>`;
+
 }
+
 
 
 
