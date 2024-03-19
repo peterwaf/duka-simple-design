@@ -119,7 +119,6 @@ if (productID == product1.productId) {
     details.innerHTML = product1.details;
     image.src = product1.image;
     qtyAmount(product1.price);
-
 }
 
 else if (productID == product2.productId) {
@@ -213,6 +212,62 @@ function qtyAmount(price) {
     }
 
 }
+
+function addQty() {
+    let availableQty = document.getElementById("product_count_tracker").value;
+    let availableQtyNum = parseInt(availableQty);
+    let incrementQyantity = availableQtyNum += 1;
+    document.getElementById("product_count_tracker").value = incrementQyantity;
+}
+
+function removeQty() {
+    let availableQty = document.getElementById("product_count_tracker").value;
+    let availableQtyNum = parseInt(availableQty);
+    let incrementQyantity = availableQtyNum -= 1;
+    document.getElementById("product_count_tracker").value = incrementQyantity;
+}
+
+buttonAddQty.addEventListener("click", function () {
+    addQty();
+    incrementQtyAmount(product1, product1.productId);
+    incrementQtyAmount(product2, product2.productId);
+    incrementQtyAmount(product3, product3.productId);
+    incrementQtyAmount(product4, product4.productId);
+    incrementQtyAmount(product5, product5.productId);
+    incrementQtyAmount(product6, product6.productId);
+    incrementQtyAmount(product7, product7.productId);
+    incrementQtyAmount(product8, product8.productId);
+
+})
+
+buttonRemoveQty.addEventListener("click", function () {
+    removeQty();
+    incrementQtyAmount(product1, product1.productId);
+    incrementQtyAmount(product2, product2.productId);
+    incrementQtyAmount(product3, product3.productId);
+    incrementQtyAmount(product4, product4.productId);
+    incrementQtyAmount(product5, product5.productId);
+    incrementQtyAmount(product6, product6.productId);
+    incrementQtyAmount(product7, product7.productId);
+    incrementQtyAmount(product8, product8.productId);
+})
+
+function incrementQtyAmount(product, id) {
+    let qtyProductAmount;
+    let availableQty = document.getElementById("product_count_tracker").value;
+    let availableQtyNum = parseInt(availableQty);
+    let dbProductID = window.location.search;
+    let decordedProductID = decodeURIComponent(dbProductID);
+    let productID = decordedProductID.substring(1);
+    if (productID == id) {
+        qtyProductAmount = product.price * availableQtyNum;
+    }
+    if (qtyProductAmount < 1) {
+        alert("Must be greater than 1");
+    }
+    pricing.innerHTML = `KES : <span id="fullAmount"> ${qtyProductAmount}</span>`;
+}
+
 
 
 
