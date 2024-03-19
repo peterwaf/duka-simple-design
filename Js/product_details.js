@@ -92,7 +92,9 @@ let product8 = {
 let locationsCharges = {
     Nairobi: 200,
     Nakuru: 400,
-    Mombasa: 900
+    Mombasa: 900,
+    Eldoret: 600,
+    Kisumu: 500,
 }
 
 
@@ -101,6 +103,9 @@ let pricing = document.getElementById("pricing");
 let details = document.getElementById("details");
 let image = document.getElementById("product_image1");
 let deliveryLocations = document.getElementById("delivery_locations");
+let buttonAddQty = document.getElementById("add");
+let buttonRemoveQty = document.getElementById("remove");
+let productFullAmountTracker;
 
 for (const [key, value] of Object.entries(locationsCharges)) {
     deliveryLocations.innerHTML += `<option value="${key}" id= "${key}">${key}</option>`
@@ -110,7 +115,7 @@ let receivedID = window.location.search;//get the searched after ? in the url
 let productID = decodeURIComponent(receivedID).substring(1); // decode the url and split it to remover the ?
 if (productID == product1.productId) {
     heading.innerText = product1.name;
-    pricing.innerText = `KES : ${product1.price}`
+    pricing.innerHTML = `KES : <span id="fullAmount"> ${product1.price}</span>`;
     details.innerHTML = product1.details;
     image.src = product1.image;
     qtyAmount(product1.price);
@@ -119,7 +124,7 @@ if (productID == product1.productId) {
 
 else if (productID == product2.productId) {
     heading.innerText = product2.name;
-    pricing.innerText = `KES : ${product2.price}`
+    pricing.innerHTML = `KES : <span id="fullAmount"> ${product2.price}</span>`;
     details.innerHTML = product2.details;
     image.src = product2.image;
     qtyAmount(product2.price);
@@ -127,42 +132,42 @@ else if (productID == product2.productId) {
 
 else if (productID == product3.productId) {
     heading.innerText = product3.name;
-    pricing.innerText = `KES : ${product3.price}`
+    pricing.innerHTML = `KES : <span id="fullAmount"> ${product3.price}</span>`;
     details.innerHTML = product3.details;
     image.src = product3.image;
     qtyAmount(product3.price);
 }
 else if (productID == product4.productId) {
     heading.innerText = product4.name;
-    pricing.innerText = `KES : ${product4.price}`
+    pricing.innerHTML = `KES : <span id="fullAmount"> ${product4.price}</span>`;
     details.innerHTML = product4.details;
     image.src = product4.image;
     qtyAmount(product4.price);
 }
 else if (productID == product5.productId) {
     heading.innerText = product5.name;
-    pricing.innerText = `KES : ${product5.price}`
+    pricing.innerHTML = `KES : <span id="fullAmount"> ${product5.price}</span>`;
     details.innerHTML = product5.details;
     image.src = product5.image;
     qtyAmount(product5.price);
 }
 else if (productID == product6.productId) {
     heading.innerText = product6.name;
-    pricing.innerText = `KES : ${product6.price}`
+    pricing.innerHTML = `KES : <span id="fullAmount"> ${product6.price}</span>`;
     details.innerHTML = product6.details;
     image.src = product6.image;
     qtyAmount(product6.price);
 }
 else if (productID == product7.productId) {
     heading.innerText = product7.name;
-    pricing.innerText = `KES : ${product7.price}`
+    pricing.innerHTML = `KES : <span id="fullAmount"> ${product7.price}</span>`;
     details.innerHTML = product7.details;
     image.src = product7.image;
     qtyAmount(product7.price);
 }
 else if (productID == product8.productId) {
     heading.innerText = product8.name;
-    pricing.innerText = `KES : ${product8.price}`
+    pricing.innerHTML = `KES : <span id="fullAmount"> ${product8.price}</span>`;
     details.innerHTML = product8.details;
     image.src = product8.image;
     qtyAmount(product8.price);
@@ -192,9 +197,7 @@ deliveryLocations.onchange = function () {
     let location = document.getElementById("delivery_locations").value;
     let changedDeliveryAmount = locationCharges(location);
     deliveryAmnt.innerText = changedDeliveryAmount;
-    console.log(deliveryAmnt.innerText);
 }
-
 
 
 function qtyAmount(price) {
@@ -202,12 +205,14 @@ function qtyAmount(price) {
         let qty = document.getElementById("product_count_tracker").value;
         qtyInt = parseInt(qty);
         let finalAmount = qtyInt * price;
+        productFullAmountTracker = finalAmount;
         pricing.innerHTML = `KES : <span id="fullAmount"> ${finalAmount}</span>`;
         if (isNaN(finalAmount)) {
-            pricing.innerText = `KES : <span id="fullAmount"> ${price}</span>`;
+            pricing.innerHTML = `KES : <span id="fullAmount"> ${price}</span>`;
         }
     }
 
 }
+
 
 
