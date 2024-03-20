@@ -198,7 +198,6 @@ deliveryLocations.onchange = function () {
     deliveryAmnt.innerText = changedDeliveryAmount;
 }
 
-
 function qtyAmount(price) {
     document.getElementById("product_count_tracker").onkeyup = function () {
         if (parseInt(document.getElementById("product_count_tracker").value) < 1) {
